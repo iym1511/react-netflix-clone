@@ -19,7 +19,7 @@ const useOnClickOutside = (ref, handler) => {
             document.addEventListener("touchstart", listner)
         };
     }, []);
-  
+
 }
- 
+
 export default useOnClickOutside;

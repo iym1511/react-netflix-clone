@@ -8,10 +8,6 @@ const Banner = () => {
     const [movie, setMovie] = useState([]);
     const [isClicked, setIsClicked] = useState(false);
 
-    useEffect(() => {
-        fetchData();
-    }, []);
-
     const fetchData = async () => {
         // 현재 상영중인 영화 정보를 가져오기(여러 영화)
         const request = await axios.get(requests.fetchNowPlaying);
@@ -29,6 +25,10 @@ const Banner = () => {
         setMovie(movieDetail);
     };
 
+    useEffect(() => {
+        fetchData();
+    }, []);
+
     const truncate = (str, n) => {
         return str?.length > n ? str.substr(0, n - 1) + "..." : str;
     };
@@ -42,6 +42,7 @@ const Banner = () => {
     }}>
         <div className="banner__contents">
             <h1 className="banner__title">
+                {/* 여기 2023-04-15 기준 title만 적용됨 */}
                 {movie.title || movie.name || movie.original_name}
             </h1>
 
