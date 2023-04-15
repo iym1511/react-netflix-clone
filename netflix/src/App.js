@@ -8,13 +8,9 @@ import SearchPage from "./pages/SearchPage";
 const Layout = () => {
   return(
     <div>
-
       <Nav />
-
       <Outlet />
-
       <Footer />
-
     </div>
   )
 }
