@@ -42,7 +42,7 @@ const Banner = () => {
     }}>
         <div className="banner__contents">
             <h1 className="banner__title">
-                {/* 여기 2023-04-15 기준 title만 적용됨 */}
+                {/* 여기 2023-04-15 기준 title만 적용됨. */}
                 {movie.title || movie.name || movie.original_name}
             </h1>
 
