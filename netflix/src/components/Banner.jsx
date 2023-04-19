@@ -2,6 +2,7 @@ import axios from "../api/axios";
 import React, { useState,useEffect } from 'react';
 import requests from '../api/requests';
 import "./Banner.css"
+import { useLocation } from "react-router-dom";
 
 
 const Banner = () => {
@@ -32,8 +33,8 @@ const Banner = () => {
     const truncate = (str, n) => {
         return str?.length > n ? str.substr(0, n - 1) + "..." : str;
     };
-
     console.log('movie',movie);
+
 
     if(!isClicked){
         return(
@@ -52,7 +53,6 @@ const Banner = () => {
             </div>
 
             <h1 className="banner__description">{truncate(movie.overview, 100)}</h1>
-
         </div>
         <div className="banner--fadeBottom"/>
         </div>

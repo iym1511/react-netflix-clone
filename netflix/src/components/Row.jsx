@@ -64,17 +64,19 @@ const Row = ({ isLargeRow, title, id, fetchUrl }) => {
                     },
                 }} // 해상도에 따라 포여지는 카드스와이퍼 개수 지정
             >
-                <div id={id} className="row__posters">
-                    {movies.map((movie)=>(        
-                    <SwiperSlide>            
-                    <img key={movie.id} 
-                    className={`row__poster ${isLargeRow && "row__posterLarge"}`}
-                    src={`https://image.tmdb.org/t/p/original/${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
-                    alt={movie.name}
-                    onClick={()=>handleClick(movie)}
-                    />
-                    </SwiperSlide>
-                    ))}
+                <div id={id} className="row__posters" style={{border:"1px solid red"}}>sdsasadads
+                    {
+                        movies.map((movie)=>(        
+                        <SwiperSlide>
+                            <img key={movie.id} 
+                            className={`row__poster ${isLargeRow && "row__posterLarge"}`}
+                            src={`https://image.tmdb.org/t/p/original/${isLargeRow ? movie.poster_path : movie.backdrop_path}`}
+                            alt={movie.name}
+                            onClick={()=>handleClick(movie)}
+                            />
+                        </SwiperSlide>
+                        ))
+                    }
                 </div>
             </Swiper>
             {

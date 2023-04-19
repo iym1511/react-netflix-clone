@@ -6,12 +6,13 @@ import './SearchPage.css'
 
 // 영화 데이터 가져오기
 const SearchPage = () => {
-    
+
     const navigate = useNavigate();
     const [searchResults, setSearchResults] = useState([]);
+    const location = useLocation();
 
     const useQuery = () => {
-        return new URLSearchParams(useLocation().search);
+        return new URLSearchParams(location.search);
     }
 
     let query = useQuery();
@@ -20,7 +21,6 @@ const SearchPage = () => {
     // 최적화
     const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
-    
     const fetchSearchMovie = async (searchTerm) => {
         try {
             const request = await axios.get(`/search/multi?include_adult=false&query=${debouncedSearchTerm}`)
